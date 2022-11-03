@@ -52,8 +52,13 @@ html{
     cursor: pointer;
 }
 
-.active{
+
+.cell.active{
     background-color: rgb(0, 162, 232);
+}
+
+.cell.bomb.active{
+    background-color: red;
 }
 
 .foot{
