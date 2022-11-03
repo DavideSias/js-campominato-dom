@@ -1,10 +1,15 @@
 const elePlay = document.querySelector('.btn-play');
+const eleWelcome = document.querySelector('.welcome-title');
 
 elePlay.addEventListener('click', function(){
 
     const eleGrid = document.querySelector('.grid');
     eleGrid.replaceChildren();  
     // eleGrid.innerHTML = '' alternativa per svuotare il contenuto
+
+    eleGrid.classList.remove('hidden');
+	eleWelcome.classList.add('hidden');
+
     const eleDifficulty = document.querySelector('#difficulty');
     let nCells = parseInt(eleDifficulty.value);
     console.log(nCells);
@@ -30,10 +35,8 @@ elePlay.addEventListener('click', function(){
         eleGrid.append(eleCell);
         eleCell.innerHTML = i; 
 
-        eleCell.addEventListener('click', function() {
-            this.classList.add('active');
-            console.log([i]);
-        });
+        eleCell.addEventListener('click', play)
+ 
 
         switch (nCells) {
             case 100:
@@ -54,5 +57,9 @@ elePlay.addEventListener('click', function(){
 
 function getRandomInteger(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function play() {
+    this.classList.add('active');
 }
 

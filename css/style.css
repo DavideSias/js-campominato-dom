@@ -29,8 +29,13 @@ html{
 
 .container{
     display: flex;
+    align-items: center;
     height: 70vh;
     background-color: rgb(127, 255, 212);
+}
+
+.welcome-title{
+    margin: auto;
 }
 
 .grid{
@@ -59,6 +64,10 @@ html{
 
 .cell.bomb.active{
     background-color: red;
+}
+
+.hidden{
+    display: none;
 }
 
 .foot{
